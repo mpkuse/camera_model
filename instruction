@@ -1,1 +1,4 @@
 rosrun camera_model Calibration -w 8 -h 11 -s 70 -i ~/bag/PX/calib/
+
+
+./Calibration -i /app/downloads/camodocal_orginal_hengli/data/calib_example/ -p 'Image' -e tif -w 13 -h 12 -v --camera-model mei

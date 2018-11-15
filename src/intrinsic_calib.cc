@@ -157,7 +157,8 @@ int main(int argc, char** argv)
     std::vector<bool> chessboardFound(imageFilenames.size(), false);
     for (size_t i = 0; i < imageFilenames.size(); ++i)
     {
-        image = cv::imread(imageFilenames.at(i), -1);
+        // image = cv::imread(imageFilenames.at(i), -1);
+        image = cv::imread(imageFilenames.at(i), 0);
 
         camodocal::Chessboard chessboard(boardSize, image);
 
