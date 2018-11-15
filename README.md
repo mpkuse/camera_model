@@ -6,6 +6,16 @@ part of [camodocal](https://github.com/hengli/camodocal)
 [OpenCV 3](https://www.opencv.org/)
 [Boost](https://www.boost.org/)
 
+## How to compile (Standalone)
+```
+mkdir build
+cmake ..
+make
+```
+
+It is very easy to adapt this into your own projects. You will need
+to copy the `include` and `src` directories to your project and
+edit your cmake files accordingly. Look at my cmake file to know how to do it. 
 
 ## Calibration:
 
