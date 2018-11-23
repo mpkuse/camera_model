@@ -25,8 +25,23 @@ Use [intrinsic_calib.cc](src/camera_models/intrinsic_calib.cc) to calibrate your
 
 See [Camera.h](include/camodocal/camera_models/Camera.h) for general interface:
 
- - liftProjective: Lift points from the image plane to the projective space.
- - spaceToPlane: Projects 3D points to the image plane (Pi function)
+
+#### liftSphere
+- liftProjective
+- normalize vector 
+
+#### liftProjective
+- K.inverse() * [ u;v;1] 
+- apply inverse distortion 
+
+#### spaceToPlace (Pi function)
+- P := (X/Z, Y/Z)
+- \pho := apply distortion to P
+- K . \pho 
+
+#### lemma on spaceToPlane 
+=> if input to spaceToPlane is (u,v,1) instead of a real 3d point, it has the effect of applying distorion to this point, assuming the input (u,v,1) is normalized image co-ordinate 
+
 
 ## Examples
 Example usage of camodocal by mpkuse.
