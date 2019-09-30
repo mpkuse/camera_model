@@ -52,6 +52,11 @@ add_executable( prog1
     ${CamodocalCameraModelSources}
     )
 
+add_executable( prog2
+    examples/2_readcamera_from_scratch.cpp
+    ${CamodocalCameraModelSources}
+    )
+
 #add_library(camera_model
 #    src/chessboard/Chessboard.cc
 #    src/calib/CameraCalibration.cc
@@ -67,6 +72,8 @@ add_executable( prog1
 #    src/gpl/EigenQuaternionParameterization.cc)
 
 target_link_libraries(Calibration ${Boost_LIBRARIES} ${OpenCV_LIBS} ${CERES_LIBRARIES})
+
 target_link_libraries(prog1 ${Boost_LIBRARIES} ${OpenCV_LIBS} ${CERES_LIBRARIES})
+target_link_libraries(prog2 ${Boost_LIBRARIES} ${OpenCV_LIBS} ${CERES_LIBRARIES})
 
 #target_link_libraries(camera_model ${Boost_LIBRARIES} ${OpenCV_LIBS} ${CERES_LIBRARIES})
