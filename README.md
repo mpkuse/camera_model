@@ -1,10 +1,10 @@
-part of [camodocal](https://github.com/hengli/camodocal)
+part of [camodocal](https://github.com/hengli/camodocal). Originally developed by Lionel Heng.
 
 ## Required
-[Google Ceres](http://ceres-solver.org)
-[Eigen3](http://eigen.tuxfamily.org/index.php?title=Main_Page)
-[OpenCV 3](https://www.opencv.org/)
-[Boost](https://www.boost.org/)
+[Google Ceres](http://ceres-solver.org) <br/>
+[Eigen3](http://eigen.tuxfamily.org/index.php?title=Main_Page) <br/>
+[OpenCV 3](https://www.opencv.org/) <br/>
+[Boost](https://www.boost.org/) <br/>
 
 ## How to compile (Standalone)
 ```
@@ -127,4 +127,5 @@ void useBackProjection(Eigen::Vector2d p)
 ## Examples
 Example usage of camodocal by mpkuse.
 
-- *1_readcamera_from_yaml.cpp*: How to initialize CameraPtr with yaml file.
+- [1_readcamera_from_yaml.cpp](src/1_readcamera_from_yaml.cpp): How to initialize CameraPtr with yaml file.
+- [2_readcamera_from_scratch.cpp](src/2_readcamera_from_scratch.cpp): How to initialize CameraPtr with hardcoded params
