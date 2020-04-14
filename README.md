@@ -17,9 +17,64 @@ It is very easy to adapt this into your own projects. You will need
 to copy the `include` and `src` directories to your project and
 edit your cmake files accordingly. Look at my cmake file to know how to do it.
 
-## Calibration:
+## Calibration (Mono):
 
 Use [intrinsic_calib.cc](src/camera_models/intrinsic_calib.cc) to calibrate your camera.
+You may use [github-krosutils](https://github.com/mpkuse/kros_utils) to get images out of a bag recording.
+
+```c++
+$ ./Calibration -w 9 -h 6 -s 35 -i ~/try/left_images -p image -e .png --camera-name leftcamera --view-results
+
+$ ./Calibration --help
+Allowed options:
+  --help                                produce help message
+  -w [ --width ] arg (=8)               Number of inner corners on the
+                                        chessboard pattern in x direction
+  -h [ --height ] arg (=12)             Number of inner corners on the
+                                        chessboard pattern in y direction
+  -s [ --size ] arg (=7)                Size of one square in mm
+  -i [ --input ] arg (=calibrationdata) Input directory containing chessboard
+                                        images
+  -p [ --prefix ] arg (=left-)          Prefix of images
+  -e [ --file-extension ] arg (=.png)   File extension of images
+  --camera-model arg (=mei)             Camera model: kannala-brandt | mei |
+                                        pinhole
+  --camera-name arg (=camera)           Name of camera
+  --opencv                              Use OpenCV to detect corners
+  --view-results                        View results
+  -v [ --verbose ]                      Verbose output
+
+```
+
+## Calibration (Stereo):
+```c++
+$ ./Calibration_Stereo -w 9 -h 6 -s 37.4 -i ~/try/sync_stereo_pairs/ --prefix-l leftimage- --prefix-r rightimage- -e .png --view-result
+
+$ ./Calibration_Stereo --help
+Allowed options:
+  --help                              produce help message
+  -w [ --width ] arg (=9)             Number of inner corners on the chessboard
+                                      pattern in x direction
+  -h [ --height ] arg (=6)            Number of inner corners on the chessboard
+                                      pattern in y direction
+  -s [ --size ] arg (=120)            Size of one square in mm
+  -i [ --input ] arg (=images)        Input directory containing chessboard
+                                      images
+  -o [ --output ] arg (=.)            Output directory containing calibration
+                                      data
+  --prefix-l arg (=left)              Prefix of images from left camera
+  --prefix-r arg (=right)             Prefix of images from right camera
+  -e [ --file-extension ] arg (=.bmp) File extension of images
+  --camera-model arg (=mei)           Camera model: kannala-brandt | mei |
+                                      pinhole
+  --camera-name-l arg (=camera_left)  Name of left camera
+  --camera-name-r arg (=camera_right) Name of right camera
+  --opencv                            Use OpenCV to detect corners
+  --view-results                      View results
+  -v [ --verbose ]                    Verbose output
+
+
+```
 
 ## Undistortion / Geometry:
 

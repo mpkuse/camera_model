@@ -28,6 +28,7 @@ include_directories("include")
 FILE(GLOB CamodocalCameraModelSources
         src/chessboard/Chessboard.cc
         src/calib/CameraCalibration.cc
+        src/calib/StereoCameraCalibration.cc
         src/camera_models/Camera.cc
         src/camera_models/CameraFactory.cc
         src/camera_models/CostFunctionFactory.cc
@@ -44,6 +45,11 @@ FILE(GLOB CamodocalCameraModelSources
 
 add_executable(Calibration
     src/intrinsic_calib.cc
+    ${CamodocalCameraModelSources}
+    )
+
+add_executable(Calibration_Stereo
+    src/stereo_calib.cc
     ${CamodocalCameraModelSources}
     )
 
@@ -72,6 +78,7 @@ add_executable( prog2
 #    src/gpl/EigenQuaternionParameterization.cc)
 
 target_link_libraries(Calibration ${Boost_LIBRARIES} ${OpenCV_LIBS} ${CERES_LIBRARIES})
+target_link_libraries(Calibration_Stereo ${Boost_LIBRARIES} ${OpenCV_LIBS} ${CERES_LIBRARIES})
 
 target_link_libraries(prog1 ${Boost_LIBRARIES} ${OpenCV_LIBS} ${CERES_LIBRARIES})
 target_link_libraries(prog2 ${Boost_LIBRARIES} ${OpenCV_LIBS} ${CERES_LIBRARIES})
