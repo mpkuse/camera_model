@@ -22,6 +22,8 @@ edit your cmake files accordingly. Look at my cmake file to know how to do it.
 Use [intrinsic_calib.cc](src/camera_models/intrinsic_calib.cc) to calibrate your camera.
 You may use [github-krosutils](https://github.com/mpkuse/kros_utils) to get images out of a bag recording.
 
+Go [here](https://markhedleyjones.com/projects/calibration-checkerboard-collection) to get printable checkerboards of various dimensions. 
+
 ```c++
 $ ./Calibration -w 9 -h 6 -s 35 -i ~/try/left_images -p image -e .png --camera-name leftcamera --view-results
 
